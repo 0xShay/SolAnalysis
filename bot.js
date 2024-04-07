@@ -132,7 +132,11 @@ bot.command("analyseaddress", async (ctx) => {
 
 })
 
-bot.launch()
+bot.launch(() => {
+    console.log("-----------------------------------------------------------------");
+    console.log("| 📊 SolAnalysis instance is now running - press Ctrl-C to stop |");
+    console.log("-----------------------------------------------------------------");
+})
 
 process.once("SIGINT", () => bot.stop("SIGINT"))
 process.once("SIGTERM", () => bot.stop("SIGTERM"))
