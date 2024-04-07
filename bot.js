@@ -17,6 +17,11 @@ const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
 let launchTime = Date.now();
 
+bot.use((ctx, next) => {
+    console.log(`[${new Date().toLocaleString()}] - ${ctx.updateType}`, ctx.update);
+    return next();
+})
+
 bot.start((ctx) => {
     ctx.reply(`Hello @${ctx.update.message.from.username}!\nRun /help for a list of available commands.`);
 })
