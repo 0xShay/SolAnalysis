@@ -37,7 +37,7 @@ bot.help((ctx) => {
         "/analyseaddress [address] - displays an analysis of the on-chain account at [address]",
         "",
         "<b>Bot Info</b>",
-        `🕒 Uptime: ${(Date.now() - launchTime) / 60000} minutes`
+        `🕒 Uptime: ${Math.floor((Date.now() - launchTime) / 60000)} minutes`
     ].join("\n"));
 })
 
